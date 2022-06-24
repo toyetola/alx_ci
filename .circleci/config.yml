@@ -21,9 +21,10 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - checkout
       - run:
-          name: "say hello again"
-          command: "echo Hello, World"
+          name: "say hello"
+          command: "echo Hello"
       
   print_world:
     requires:
@@ -31,9 +32,10 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - checkout
       - run:
           name: "say world"
-          command: "echo Hello, World"
+          command: "echo world"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
